@@ -16,6 +16,7 @@ func _process(delta):
 			Network.client.get_connection_status() == NetworkedMultiplayerPeer.CONNECTION_CONNECTING):
 				Network.client.poll()
 
+
 func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")

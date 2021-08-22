@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Multiplayer-tic-tac-toe"
-run/main_scene="res://Game/MultiplayerTicTacToe/MainScreens/Landing.tscn"
+run/main_scene="res://Core/Network/NetworkSetup.tscn"
 config/icon="res://icon.png"
 
 [autoload]
