@@ -4,7 +4,7 @@
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_top = -1.05948
-margin_right = 426.0
+margin_right = 416.0
 margin_bottom = 238.941
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 __meta__ = {
