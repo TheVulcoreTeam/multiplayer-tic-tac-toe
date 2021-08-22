@@ -49,7 +49,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=426
+window/size/width=416
 window/size/height=240
 
 [physics]
