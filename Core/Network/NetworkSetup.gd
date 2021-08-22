@@ -21,9 +21,6 @@ func _ready() -> void:
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	
-#
-#	device_ip_address.text = Network.ip_address
-	
 	if OS.has_feature("Server"):
 		Network.create_server()
 

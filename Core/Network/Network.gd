@@ -24,7 +24,6 @@ func create_server() -> void:
 
 
 func join_server() -> void:
-#	client = NetworkedMultiplayerENet.new()
 	client = WebSocketClient.new()
 	var result = client.connect_to_url(ip_address, PoolStringArray(), true)
 	
