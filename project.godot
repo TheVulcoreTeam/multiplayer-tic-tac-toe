@@ -47,6 +47,11 @@ _global_script_class_icons={
 config/name="Multiplayer-tic-tac-toe"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=426
+window/size/height=240
+
 [physics]
 
 common/enable_pause_aware_picking=true
