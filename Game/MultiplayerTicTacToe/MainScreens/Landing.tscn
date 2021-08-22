@@ -47,11 +47,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 46.0
 margin_top = -29.9995
-margin_right = -2.0
+margin_right = -31.0
 margin_bottom = -9.99953
 grow_horizontal = 2
 grow_vertical = 2
-custom_constants/separation = 113
+custom_constants/separation = 101
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,8 +66,8 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="ColorRect/HBoxContainer"]
-margin_left = 148.0
-margin_right = 199.0
+margin_left = 136.0
+margin_right = 187.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 30.7621, 10 )
 text = "Config"
@@ -76,8 +76,8 @@ __meta__ = {
 }
 
 [node name="Button3" type="Button" parent="ColorRect/HBoxContainer"]
-margin_left = 312.0
-margin_right = 369.0
+margin_left = 288.0
+margin_right = 345.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 30.7621, 10 )
 text = "Credits"
