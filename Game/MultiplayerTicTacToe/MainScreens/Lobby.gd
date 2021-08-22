@@ -2,6 +2,11 @@ extends Node2D
 
 
 var room_element = preload("res://Game/MultiplayerTicTacToe/MainScreens/LobbyElements/Room.tscn")
+
+func _ready():
+	rpc_id(1, 'get_room_list')
+
+
 func _on_Button_Create_pressed():
 	#todo create lobby
 	pass # Replace with function body.
@@ -16,7 +21,8 @@ static func delete_children(node):
 		node.remove_child(n)
 		n.queue_free()
 
-func set_users_names(room_dic):
+remote func process_list(room_dic):
+	print_debug(room_dic)
 	delete_children($VBoxContainer)
 	for element in room_dic:
 		var room_item = room_element.instance()
@@ -26,9 +32,7 @@ func set_users_names(room_dic):
 		$VBoxContainer.add_child(room_item.get_node("JoinTo"))
 		continue
 		
-	if $VBox.get_children().size() == 0:
+	if $VBoxContainer.get_children().size() == 0:
 		var room_item = room_element.instance()
-		room_item.get_node("RoomName").text = "Waiting for rooms"
-		$VBox.add_child(room_item)
-
-			
+		room_item.get_node("RoomName").text = "Waiting for rooms..."
+		$VBoxContainer.add_child(room_item)
