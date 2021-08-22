@@ -8,6 +8,40 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "GBoard",
+"language": "GDScript",
+"path": "res://Core/BoardEngine/GBoard/GBoard.gd"
+}, {
+"base": "GMovement",
+"class": "GBoxMovement",
+"language": "GDScript",
+"path": "res://Core/BoardEngine/GMovement/GBoxMovement/GBoxMovement.gd"
+}, {
+"base": "Node",
+"class": "GMovement",
+"language": "GDScript",
+"path": "res://Core/BoardEngine/GMovement/GMovement.gd"
+}, {
+"base": "Node2D",
+"class": "GPiece",
+"language": "GDScript",
+"path": "res://Core/BoardEngine/GPiece/GPiece.gd"
+}, {
+"base": "GPiece",
+"class": "GPlayer",
+"language": "GDScript",
+"path": "res://Core/BoardEngine/GPiece/GPlayer/GPlayer.gd"
+} ]
+_global_script_class_icons={
+"GBoard": "",
+"GBoxMovement": "",
+"GMovement": "",
+"GPiece": "",
+"GPlayer": ""
+}
+
 [application]
 
 config/name="Multiplayer-tic-tac-toe"
