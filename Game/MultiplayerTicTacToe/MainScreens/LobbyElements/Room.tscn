@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="Room" type="HBoxContainer"]
+margin_right = 334.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="RoomName" type="Label" parent="."]
+margin_top = 3.0
+margin_right = 215.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "Room Name"
+align = 1
+
+[node name="JoinTo" type="Button" parent="."]
+margin_left = 219.0
+margin_right = 334.0
+margin_bottom = 20.0
+text = "Join to the room"

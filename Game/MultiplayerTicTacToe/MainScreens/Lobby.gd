@@ -1,5 +1,7 @@
 extends Node2D
 
+
+var room_element = preload("res://Game/MultiplayerTicTacToe/MainScreens/LobbyElements/Room.tscn")
 func _on_Button_Create_pressed():
 	#todo create lobby
 	pass # Replace with function body.
@@ -14,40 +16,19 @@ static func delete_children(node):
 		node.remove_child(n)
 		n.queue_free()
 
-func set_users_names(user_dic, _parent = null, _client = null):
-	if _parent:
-		parent = _parent
-	if _client:
-		client = _client
-	delete_children($VBox)
-	
-	for element in user_dic:
+func set_users_names(room_dic):
+	delete_children($VBoxContainer)
+	for element in room_dic:
+		var room_item = room_element.instance()
+		room_item.get_node("JoinTo").text = "Join"
+		room_item.get_node("RoomName").text = str(room_dic[element]["name"]) +" "+ str(room_dic[element]["qantity"])
+		room_item.get_node("JoinTo").connect("pressed", self, "on_pressed", [element] )
+		$VBoxContainer.add_child(room_item.get_node("JoinTo"))
+		continue
 		
-		if(parent.get_node("Background/VBox/YourNick").text == user_dic[element]["nick"]):
-			continue
-		if user_dic[element]["status"] == 1: 
-			var buttom = Button.new()
-#			buttom.text = str( user_dic[element]["nick"] + " " + str(user_dic[element]["status"]))
-			buttom.text = str( user_dic[element]["nick"] )
-			buttom.connect("pressed", self, "on_pressed",[element] )
-			$VBox.add_child(buttom)
-			continue
-		if user_dic[element]["status"] == 2: 
-			var buttom = Button.new()
-#			buttom.text = str( user_dic[element]["nick"] + " " + str(user_dic[element]["status"]))
-			buttom.text = str( user_dic[element]["nick"])
-			$VBox.add_child(buttom)
-			continue
-		
-		if user_dic[element]["status"] == 4: 
-			if(parent.get_node("Background/VBox/YourNick").text == user_dic[element]["nick"]):
-				parent.get_node("Confirm").show()
-			var buttom = Button.new()
-#			buttom.text = str( user_dic[element]["nick"] + " " + str(user_dic[element]["status"]))
-			buttom.text = str( user_dic[element]["nick"] )
-			$VBox.add_child(buttom)
-			continue
 	if $VBox.get_children().size() == 0:
-		var buttom = Button.new()
-		buttom.text = "Waiting others players..."
-		$VBox.add_child(buttom)
+		var room_item = room_element.instance()
+		room_item.get_node("RoomName").text = "Waiting for rooms"
+		$VBox.add_child(room_item)
+
+			
