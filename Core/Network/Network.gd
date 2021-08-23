@@ -6,7 +6,7 @@ const MAX_CLIENTS = 4
 var server
 var client
 
-var ip_address := "ws://localhost"
+var ip_address := "ws://localhost:" + str(DEFAULT_PORT)
 
 func _ready() -> void:
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -43,8 +43,7 @@ func _server_disconnected() -> void:
 	print("Se ha desconectado del Server.")
 
 
-func player_connected():
-	var id = get_tree().get_rpc_sender_id()
+func player_connected(id):
 	print_debug("connected id = " + str(id))
 
 
